@@ -5,3 +5,5 @@ A module for Python 3.6 designed to quickly estimate image separations of lensed
 This has been developed for application to continuum images of lensed sources pulled from the [ALMA Science Archive](https://almascience.nrao.edu/aq/)
 
 This requires the latest versions of numpy, scipy, astropy, matplotlib, and mpl_toolkits.
+
+Currently, to install simply place 'quims.py' into the same directory as your current script and run 'import quims'.
