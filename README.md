@@ -6,4 +6,4 @@ This has been developed for application to continuum images of lensed sources pu
 
 This requires the latest versions of numpy, scipy, astropy, matplotlib, and mpl_toolkits.
 
-Currently, to install simply place 'quims.py' into the same directory as your current script and `import quims`.
+Currently, to install place 'quims.py' into the same directory as your current script and run `import quims`.
