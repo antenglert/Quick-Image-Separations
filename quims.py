@@ -112,6 +112,10 @@ def mainFitting(fileAddress,fileOut=None,xCrop = None,yCrop = None,maskSig=5,siz
     
     # flag if no-peaks
     if np.sum(binMask) == 0:
+        fig, ax = pl.subplots()
+        pl.imshow(data)
+        pl.text(0.05,0.92,sourceName,c='white',transform=ax.transAxes,fontsize=12)
+        pl.savefig(fileOut + sourceName + '_MANUAL.tiff',bbox_inches='tight')
         return None,pixelSize,None,None,sourceName
     # -- #
     
@@ -141,10 +145,18 @@ def mainFitting(fileAddress,fileOut=None,xCrop = None,yCrop = None,maskSig=5,siz
     
     # threshold for flagging large/small sources, default >5'' flagged
     if not (sizeFlagLow < out[2]*pixelSize < sizeFlagUp):
+        fig, ax = pl.subplots()
+        pl.imshow(data)
+        pl.text(0.05,0.92,sourceName,c='white',transform=ax.transAxes,fontsize=12)
+        pl.savefig(fileOut + sourceName + '_MANUAL.tiff',bbox_inches='tight')
         return None,pixelSize,None,None,sourceName
     
     # circle center outside cropped-region flagged
     if (not (0 < out[1] < len(dataCrop[0,:]))) or (not (0 < out[0] < len(dataCrop[:,0]))):
+        fig, ax = pl.subplots()
+        pl.imshow(data)
+        pl.text(0.05,0.92,sourceName,c='white',transform=ax.transAxes,fontsize=12)
+        pl.savefig(fileOut + sourceName + '_MANUAL.tiff',bbox_inches='tight')
         return None,pixelSize,None,None,sourceName
     # -- #
     
@@ -201,6 +213,7 @@ def mainFitting(fileAddress,fileOut=None,xCrop = None,yCrop = None,maskSig=5,siz
     # --plotting input image and cropping-box-- #
     fig, ax = pl.subplots()
     pl.imshow(data)
+    pl.text(0.05,0.92,sourceName,c='white',transform=ax.transAxes,fontsize=12)
     rect = Rectangle((xCropLow,yCropLow),xCropUp-xCropLow,yCropUp-yCropLow,fill=False,ls='--',color='red')
     ax.add_patch(rect)
     pl.savefig(fileOut + sourceName + '_image.tiff',dpi=420,bbox_inches='tight')
