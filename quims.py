@@ -116,6 +116,7 @@ def mainFitting(fileAddress,fileOut=None,xCrop = None,yCrop = None,maskSig=5,siz
         pl.imshow(data)
         pl.text(0.05,0.92,sourceName,c='white',transform=ax.transAxes,fontsize=12)
         pl.savefig(fileOut + sourceName + '_MANUAL.tiff',bbox_inches='tight')
+        pl.close()
         return None,pixelSize,None,None,sourceName
     # -- #
     
@@ -149,6 +150,7 @@ def mainFitting(fileAddress,fileOut=None,xCrop = None,yCrop = None,maskSig=5,siz
         pl.imshow(data)
         pl.text(0.05,0.92,sourceName,c='white',transform=ax.transAxes,fontsize=12)
         pl.savefig(fileOut + sourceName + '_MANUAL.tiff',bbox_inches='tight')
+        pl.close()
         return None,pixelSize,None,None,sourceName
     
     # circle center outside cropped-region flagged
@@ -157,6 +159,7 @@ def mainFitting(fileAddress,fileOut=None,xCrop = None,yCrop = None,maskSig=5,siz
         pl.imshow(data)
         pl.text(0.05,0.92,sourceName,c='white',transform=ax.transAxes,fontsize=12)
         pl.savefig(fileOut + sourceName + '_MANUAL.tiff',bbox_inches='tight')
+        pl.close()
         return None,pixelSize,None,None,sourceName
     # -- #
     
